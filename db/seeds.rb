@@ -33,6 +33,62 @@ owned_talents_1 = [
   }
 ]
 
+
+owned_talents_2 = [
+  {
+    title: "Public Speaking",
+    description: "Will persuade the Queen of England to invade Iraq",
+    picture: "https://images.unsplash.com/photo-1521117177129-ca6b2e68cb26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cce4201e8d3a1905d4a5e7a99b2dfd53&auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    title: "Violin",
+    description: "Can play anything you want",
+    picture: "https://images.unsplash.com/photo-1521117177129-ca6b2e68cb26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cce4201e8d3a1905d4a5e7a99b2dfd53&auto=format&fit=crop&w=800&q=60"
+  }
+]
+
+owned_talents_3 = [
+  {
+    title: "Coding Ruby",
+    description: "Will make all your friends jealous of your website",
+    picture: "https://images.unsplash.com/photo-1521117177129-ca6b2e68cb26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cce4201e8d3a1905d4a5e7a99b2dfd53&auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    title: "Data Analysis",
+    description: "Can analyse all your internet history",
+    picture: "https://images.unsplash.com/photo-1521117177129-ca6b2e68cb26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cce4201e8d3a1905d4a5e7a99b2dfd53&auto=format&fit=crop&w=800&q=60"
+  }
+]
+
+owned_talents_4 = [
+  {
+    title: "Mathematician",
+    description: "The meaning of life is 42",
+    picture: "https://images.unsplash.com/photo-1521117177129-ca6b2e68cb26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cce4201e8d3a1905d4a5e7a99b2dfd53&auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    title: "Muai Thai pro",
+    description: "Will beat up people for cash",
+    picture: "https://images.unsplash.com/photo-1521117177129-ca6b2e68cb26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cce4201e8d3a1905d4a5e7a99b2dfd53&auto=format&fit=crop&w=800&q=60"
+  }
+]
+
+owned_talents_5 = [
+  {
+    title: "Physicist",
+    description: "Can work out the average amount of dirt particles you will eat before you die",
+    picture: "https://images.unsplash.com/photo-1521117177129-ca6b2e68cb26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cce4201e8d3a1905d4a5e7a99b2dfd53&auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    title: "Business Analyst",
+    description: "Will estimate the number of years you have left before your business fails",
+    picture: "https://images.unsplash.com/photo-1521117177129-ca6b2e68cb26?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cce4201e8d3a1905d4a5e7a99b2dfd53&auto=format&fit=crop&w=800&q=60"
+  }
+]
+
+
+
+
 u1 = User.first
 u1.owned_talents.build(owned_talents_1)
 u1.save!
@@ -40,5 +96,19 @@ u1.booked_talents << Talent.first
 u1.save!
 
 u2 = User.second
+u2.owned_talents.build(owned_talents_2)
+u2.save!
+u2.booked_talents << Talent.second
+u2.save!
 
 u3 = User.third
+u3.owned_talents.build(owned_talents_3)
+u3.save!
+u3.booked_talents << Talent.third
+u3.save!
+
+u4 = User.fourth
+u4.owned_talents.build(owned_talents_4)
+u4.save!
+u4.booked_talents << Talent.fourth
+u4.save!
