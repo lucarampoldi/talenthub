@@ -2,6 +2,7 @@ class TalentsController < ApplicationController
   before_action :find_talent, only: [:show, :edit, :update, :destroy]
 
   def show
+    @booking = Booking.new
   end
 
   def edit
