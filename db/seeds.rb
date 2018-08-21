@@ -1,4 +1,5 @@
 Booking.destroy_all
+Review.destroy_all
 Talent.destroy_all
 User.destroy_all
 
@@ -97,8 +98,135 @@ owned_talents_5 = [
   }
 ]
 
+review_talent_1 = [
+  {
+    content: "great job!",
+    rating: 5,
+    user: User.second
+  },
+  {
+    content: "terrible",
+    rating: 1,
+    user: User.third
+  }
+]
 
+review_talent_2 = [
+  {
+    content: "he's ok",
+    rating: 2,
+    user: User.second
+  },
+  {
+    content: "Mesmerizing",
+    rating: 4,
+    user: User.third
+  }
+]
 
+review_talent_3 = [
+  {
+    content: "Fantastic",
+    rating: 4,
+    user: User.last
+  },
+  {
+    content: "Good but he swears too much",
+    rating: 3,
+    user: User.first
+  }
+]
+
+review_talent_4 = [
+  {
+    content: "Too expensive, not worth it!",
+    rating: 2,
+    user: User.third
+  },
+  {
+    content: "Fuck this guy, I hate him",
+    rating: 1,
+    user: User.first
+  }
+]
+
+review_talent_5 = [
+  {
+    content: "Lovely!",
+    rating: 5,
+    user: User.first
+  },
+  {
+    content: "Best I ever had!",
+    rating: 5,
+    user: User.second
+  }
+]
+
+review_talent_6 = [
+  {
+    content: "Incredible!",
+    rating: 5,
+    user: User.second
+  },
+  {
+    content: "Worst I ever had!",
+    rating: 1,
+    user: User.first
+  }
+]
+
+review_talent_7 = [
+  {
+    content: "She's funny!",
+    rating: 5,
+    user: User.third
+  },
+  {
+    content: "Cringy!",
+    rating: 2,
+    user: User.last
+  }
+]
+
+review_talent_8 = [
+  {
+    content: "Amazing!",
+    rating: 4,
+    user: User.fourth
+  },
+  {
+    content: "Too good!",
+    rating: 5,
+    user: User.second
+  }
+]
+
+review_talent_9 = [
+  {
+    content: "Compellingly good!",
+    rating: 5,
+    user: User.first
+  },
+  {
+    content: "Excellent service!",
+    rating: 5,
+    user: User.fourth
+  }
+]
+
+review_talent_10 = [
+  {
+    content: "Fire her!",
+    rating: 1,
+    user: User.third
+  },
+  {
+    content: "Rude and incompetent",
+    rating: 1,
+    user: User.second
+  }
+]
 
 u1 = User.first
 u1.owned_talents.build(owned_talents_1)
@@ -106,11 +234,27 @@ u1.save!
 u1.booked_talents << Talent.first
 u1.save!
 
+talent1 = u1.owned_talents.first
+talent1.reviews.build(review_talent_1)
+talent1.save!
+
+talent2 = u1.owned_talents.second
+talent2.reviews.build(review_talent_2)
+talent2.save!
+
 u2 = User.second
 u2.owned_talents.build(owned_talents_2)
 u2.save!
 u2.booked_talents << Talent.second
 u2.save!
+
+talent3 = u2.owned_talents.first
+talent3.reviews.build(review_talent_3)
+talent3.save!
+
+talent4 = u2.owned_talents.second
+talent4.reviews.build(review_talent_4)
+talent4.save!
 
 u3 = User.third
 u3.owned_talents.build(owned_talents_3)
@@ -118,8 +262,24 @@ u3.save!
 u3.booked_talents << Talent.third
 u3.save!
 
+talent5 = u3.owned_talents.first
+talent5.reviews.build(review_talent_5)
+talent5.save!
+
+talent6 = u3.owned_talents.second
+talent6.reviews.build(review_talent_6)
+talent6.save!
+
 u4 = User.fourth
 u4.owned_talents.build(owned_talents_4)
 u4.save!
 u4.booked_talents << Talent.fourth
 u4.save!
+
+talent7 = u4.owned_talents.first
+talent7.reviews.build(review_talent_7)
+talent7.save!
+
+talent7 = u4.owned_talents.second
+talent7.reviews.build(review_talent_8)
+talent7.save!
