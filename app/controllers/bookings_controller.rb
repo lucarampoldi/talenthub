@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.talent = @talent
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to talent_bookings_path
     else
       render :new
     end
@@ -35,9 +35,13 @@ class BookingsController < ApplicationController
   end
 
   private
-  
+
+  def find_talent
+    @talent = Talent.find(params[:talent_id])
+  end
+
   def find_booking
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:talent_id])
   end
 
   def booking_params
