@@ -1,7 +1,6 @@
 class TalentsController < ApplicationController
   before_action :find_talent, only: [:show, :edit, :update, :destroy]
-
-
+  
   def show
   end
 
@@ -39,9 +38,10 @@ class TalentsController < ApplicationController
 
   def find_talent
     @talent = Talent.find(params[:id])
-  end
-
+  end 
+  
   def talent_params
     params.require(:talent).permit(:title, :description, :picture)
   end
+    
 end
