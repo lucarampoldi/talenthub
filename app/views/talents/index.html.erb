@@ -1,2 +1,4 @@
-<h1>Talents#index</h1>
-<p>Find me in app/views/talents/index.html.erb</p>
+<% @talents.each do |talent| %>
+  <%=  link_to <%= talent.description %> talent_path %>
+<% end %>
+
