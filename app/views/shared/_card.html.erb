@@ -1,13 +1,9 @@
 <div class="col-xs-12 col-sm-6 col-md-3">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'dancer.jpg' %>');">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= talent.picture %>');">
     <div class="card-description">
       <h2><%= talent.title %></h2>
     </div>
-    <div class="card-description">
-      <ul class="list-inline">
-        <li> <%= @talent.description %></li>
-      </ul>
-    </div>
+  <%= link_to "", talent_path(talent), class: 'card-link' %>
   </div>
 </div>
 
