@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :find_talent, only: [:show, :edit, :update, :destroy]
+
+  before_action :find_booking, only: [:show, :edit, :update, :destroy]
 
   def show
   end
@@ -8,40 +9,35 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @talent = Talent.new(talent_params)
-    if @talent.save
-      redirect_to talent_path(@talent)
+
+    @booking = Booking.new(booking_params)
+    if @booking.save
+      redirect_to booking_path(@booking)
     else
       render :new
     end
   end
 
   def update
-    @talent.update(talent_params)
-    redirect_to talent_path
-  end
-
-  def destroy
-    @talent.destroy
-    redirect_to talents_path
+    @booking.update(booking_params)
+    redirect_to booking_path
   end
 
   def new
-    @talent = Talent.new
+    @booking = Booking.new
   end
 
   def index
-    @talents = Talent.all
+    @bookings = Booking.all
   end
 
   private
 
-  def find_talent
-    @talent = Talent.find(params[:id])
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 
-  def talent_params
-    params.require(:talent).permit(:title, :description, :picture)
+  def booking_params
+    params.require(:booking).permit(:date, :content)
   end
-
 end
