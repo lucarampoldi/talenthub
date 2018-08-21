@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   before_action :find_booking, only: [:show, :edit, :update, :destroy]
 
   def show
@@ -8,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+
     @booking = Booking.new(booking_params)
     if @booking.save
       redirect_to booking_path(@booking)
@@ -38,5 +40,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:date, :content)
   end
-
 end
