@@ -13,10 +13,18 @@
   </div>
 
 </div>
-<%= link_to "Back to all talents", root_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1>Book me :)</h1>
+        <%= simple_form_for [@talent, @booking] do |f| %>
+          <%= f.input :date, required: true  %>
+          <%= f.input :content, required: true  %>
+          <%= f.submit "Book me now", class: "btn btn-primary" %>
+        <% end %>
 
-<%= simple_form_for @booking do |f| %>
-  <%= f.input :content %>
-  <%= f.input :datetime %>
-  <%= f.button :submit %>
-<% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Back to all talents", root_path %>

@@ -9,8 +9,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @booking = Booking.new(booking_params)
+    @talent = find_talent
+    @booking.talent = @talent
+    @booking.user = current_user
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -33,11 +35,15 @@ class BookingsController < ApplicationController
 
   private
 
+def find_talent
+    @talent = Talent.find(params[:talent_id])
+  end
+
   def find_booking
     @booking = Booking.find(params[:id])
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :content)
+    params.require(:booking).permit(:date, :content, :talent)
   end
 end
