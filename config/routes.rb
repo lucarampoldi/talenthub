@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
     resources :talents do
-      resources :bookings, except: [:destroy, :new]
+      resources :booking, except: :destroy
     end
   end
 
