@@ -34,10 +34,11 @@
 <div class="container">
   <div class="row">
      <div class="row">
+
    <% @talents.limit(4).each do |talent| %>
 
 
-   <%=  render "shared/card", talent: talent %>
+        <%=  render "shared/card", talent: talent %>
 
 
     <% end %>
