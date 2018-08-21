@@ -18,7 +18,8 @@
     <div class="col-sm-8 col-sm-offset-2">
       <h1>Book me :)</h1>
         <%= simple_form_for [@talent, @booking] do |f| %>
-          <%= f.input :date, required: true  %>
+
+          <%= f.date_field :date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
           <%= f.input :content, required: true  %>
           <%= f.submit "Book me now", class: "btn btn-primary" %>
         <% end %>
