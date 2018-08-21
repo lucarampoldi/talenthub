@@ -1,6 +1,6 @@
 class TalentsController < ApplicationController
   before_action :find_talent, only: [:show, :edit, :update, :destroy]
-  
+
   def show
   end
 
@@ -9,6 +9,7 @@ class TalentsController < ApplicationController
 
   def create
     @talent = Talent.new(talent_params)
+    @talent.user = current_user
     if @talent.save
       redirect_to talent_path(@talent)
     else
@@ -38,10 +39,10 @@ class TalentsController < ApplicationController
 
   def find_talent
     @talent = Talent.find(params[:id])
-  end 
-  
+  end
+
   def talent_params
     params.require(:talent).permit(:title, :description, :picture)
   end
-    
+
 end
