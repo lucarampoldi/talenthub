@@ -1,22 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://unsplash.com/photos/DgKV3HmmguU');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'photographer.jpg' %>');">
   <div class="banner-content">
     <h1>Talenthub</h1>
     <p>get the talent you need today</p>
   </div>
 </div>
 
-
-
-
-
-
-
 <div class="container">
   <div class="row">
      <div class="row">
    <% @talents.each do |talent| %>
 
-   <%=  render "talents/card", talent: talent %>
+
+   <%=  render "shared/card", talent: talent %>
 
 
     <% end %>
