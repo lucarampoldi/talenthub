@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+
     @booking = Booking.new(booking_params)
     @talent = find_talent
     @booking.talent = @talent
@@ -34,16 +35,13 @@ class BookingsController < ApplicationController
   end
 
   private
-
-def find_talent
-    @talent = Talent.find(params[:talent_id])
-  end
-
+  
   def find_booking
     @booking = Booking.find(params[:id])
   end
 
   def booking_params
+
     params.require(:booking).permit(:date, :content, :talent)
   end
 end
