@@ -1,2 +1,14 @@
-<h1>Talents#new</h1>
-<p>Find me in app/views/talents/new.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1>Add a talent!</h1>
+        <%= simple_form_for @talent do |f| %>
+          <%= f.input :title, required: true  %>
+          <%= f.input :description, required: true  %>
+          <%= f.input :picture %>
+          <%= f.submit "add a talent!", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+</div>
