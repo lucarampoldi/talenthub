@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class TalentsControllerTest < ActionDispatch::IntegrationTest
+
   test "should get new" do
     get talents_new_url
     assert_response :success
@@ -35,5 +36,10 @@ class TalentsControllerTest < ActionDispatch::IntegrationTest
     get talents_show_url
     assert_response :success
   end
+
+=======
+  # test "the truth" do
+  #   assert true
+  # end
 
 end
