@@ -1,29 +1,26 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 50%), url('#');">
-  <div class="banner-content">
+<div class="banner_index" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 50%), url('<%= image_path 'talent_index.jpg' %>');">
+  <div class="banner_content_index">
     <h1>All the talents</h1>
+    <p> book a talent now and join our community </p>
+    <%= link_to "become a talent",  new_talent_path, class: "btn btn-primary" %>
   </div>
 </div>
 
+
+
+<h3 class="text-center"> See all talents</h3>
 <div class="container">
   <div class="row">
-    <% @talents.each do |talent| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to talent_path(talent) do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= talent.picture %>');">
-            <div class="card-category">
-              <p><%= talent.title %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
+     <div class="row">
+      <% @talents.each do |talent| %>
+
+
+
+        <%=  render "shared/card", talent: talent %>
+
+
     <% end %>
-    <div class="col-xs-3" %>
-      <%= link_to new_talent_path do %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRu7aKe-sF1Yy3U8C0P0D1f__PED_gHhu_hTK3TkAVCtGd3nE2Bg');">
-          <h4>Add your talent </h4>
-        </div>
-      <% end %>
-     </div>
+    </div>
   </div>
 </div>
 
