@@ -1,7 +1,8 @@
 <% current_user.booked_talents.each do |talent|%>
 <div class="col-xs-12 col-sm-6 col-md-3">
 
-  <div class="card" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= talent.picture %>');">
+  <div class="card-wrap">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= talent.picture %>');">
 
 
     <div class="card-title">
