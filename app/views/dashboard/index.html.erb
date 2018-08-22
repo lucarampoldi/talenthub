@@ -1,29 +1,36 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('https://images.unsplash.com/photo-1517637633369-e4cc28755e01?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3dee4914d3c1248978f29fa6462cb755&auto=format&fit=crop&w=800&q=60'); height: 50vh">
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= current_user.picture %>');">
-  <div class="banner-content">
+  <div class="banner_index">
+    <div class="banner_content_index">
     <% if user_signed_in? %>
-  <div>Goodday <%= current_user.name %></div>
-<% end %>
-    <p>All the awesome talents you booked</p>
-    <%= link_to "Book another talent", new_talent_booking_path, class: "btn btn-primary" %>
+      <div>Goodday <%= current_user.name %></div>
+    <% end %>
+    <p>All the talents you have booked</p>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= 'talents.picture' %>);">
-            <h2><%= booking.talent.title %></h2>
-            <h2><%= booking.content %></h2>
-            <h2><%= booking.date %></h2>
-            <h2><%= booking.talent.price %></h2>
 
-          </div>
-          <%= link_to "", talent_bookings_path, class: 'card-link' %>
-          <% end %>
-        </div>
-      </div>
-  </div>
+  <div class="container">
+    <div class="row">
+
+  <%=  render "shared/booking"%>
+
   </div>
 </div>
+
+
+
+
+
+
+
+
+<div class="container text-center">
+  <h1>People are awesome. <br>Get a talent and brush up your event.</h1>
+    <div class="space-top-2 content"><br>
+    <%= link_to "Book another talent", talents_path, class: "btn btn-primary"%>
+  </div>
+</div>
+
+
