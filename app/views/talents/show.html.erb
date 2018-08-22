@@ -22,11 +22,11 @@
           <%= f.input :date, as: :string, placeholder: "Pick a date", input_html: { class: 'datepicker' } %>
           <%= f.input :content, required: true  %>
           <%= f.submit "Book me now", class: "btn btn-primary" %>
-        <% end %>
-
+          <% end %>
     </div>
   </div>
 </div>
+<% link_to "hello", dashboard_path  %>
 
 <%= link_to "Back to all talents", root_path %>
 
