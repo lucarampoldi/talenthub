@@ -21,7 +21,7 @@
           <td><%= talent.description %></td>
           <td><%= talent.picture %></td>
         </tr>
-        <%= link_to talent_path(talent), method: delete, data: { confirm: "Are you sure to delete your talent?" } do %>
+        <%= link_to dashboard_path(talent), method: delete, data: { confirm: "Are you sure to delete your talent?" } do %>
         <i class="fa fa-trash destroy_dose"></i>
         <% end %>
       </td>
