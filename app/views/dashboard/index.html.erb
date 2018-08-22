@@ -1,36 +1,27 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('https://images.unsplash.com/photo-1517637633369-e4cc28755e01?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3dee4914d3c1248978f29fa6462cb755&auto=format&fit=crop&w=800&q=60'); height: 50vh">
+<div class="banner_index" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 50%), url('https://images.unsplash.com/photo-1517637633369-e4cc28755e01?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3dee4914d3c1248978f29fa6462cb755&auto=format&fit=crop&w=800&q=60');">
+  <div class="banner_content_index">
 
-  <div class="banner_index">
-    <div class="banner_content_index">
-    <% if user_signed_in? %>
-      <div>Goodday <%= current_user.name %></div>
-    <% end %>
-    <p>All the talents you have booked</p>
-    </div>
+     <% if user_signed_in? %>
+
+      <h1>Goodday <%= current_user.name %></h1>
+
+      <% end %>
+
+     <p>All the talents you have booked</p>
+   </div>
   </div>
-</div>
-
 
   <div class="container">
     <div class="row">
-
-  <%=  render "shared/booking"%>
-
+        <% current_user.booked_talents.each do |talent| %>
+          <%=  render "shared/card", talent: talent %>
+        <% end %>
   </div>
 </div>
-
-
-
-
-
-
-
 
 <div class="container text-center">
-  <h1>People are awesome. <br>Get a talent and brush up your event.</h1>
-    <div class="space-top-2 content"><br>
     <%= link_to "Book another talent", talents_path, class: "btn btn-primary"%>
   </div>
-</div>
+
 
 
