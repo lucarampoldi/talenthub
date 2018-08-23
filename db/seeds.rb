@@ -283,3 +283,6 @@ talent7.save!
 talent7 = u4.owned_talents.second
 talent7.reviews.build(review_talent_8)
 talent7.save!
+
+
+

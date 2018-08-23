@@ -1,7 +1,17 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+<<<<<<< HEAD
+=======
+
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'pg_search'
+>>>>>>> 34ceb117839ec633c49b9681506480435ec179ca
 gem 'rubocop', '~> 0.58.2'
+
 gem 'devise'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
