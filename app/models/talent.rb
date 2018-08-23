@@ -6,5 +6,6 @@ class Talent < ApplicationRecord
   has_many :reviews
   has_many :reviewers, through: :reviews, source: :user
   belongs_to :user
+  mount_uploader :picture, PhotoUploader
 end
 
