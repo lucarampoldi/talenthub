@@ -4,12 +4,25 @@
     <%= image_tag "logo.jpg", height: 50  %>
   <% end %>
 
+
+          <form action="/talents" class="search-form">
+            <div class="form-group has-feedback">
+              <label for="search" class="sr-only">Search</label>
+              <input type="text" class="form-control" name="search" id="search" placeholder="search talent">
+
+              <span class="glyphicon glyphicon-search form-control-feedback"></span>
+
+            </div>
+          </form>
+
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+
       <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Talents", talents_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Bookings", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
