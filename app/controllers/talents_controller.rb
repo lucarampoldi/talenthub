@@ -33,7 +33,7 @@ class TalentsController < ApplicationController
   end
 
   def index
-    @talents = Talent.all
+    @talents = case_insensitive_search(Talent.all)
   end
 
   private
@@ -44,6 +44,26 @@ class TalentsController < ApplicationController
 
   def talent_params
     params.require(:talent).permit(:title, :description, :picture)
+  end
+
+  def poor_mans_search(scope)
+    if params[:query].present?
+      query = params[:query]
+      scope = scope.where(title: query)
+    else
+      scope = scope
+    end
+    scope
+  end
+
+  def case_insensitive_search(scope)
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR description ILIKE :query"
+      scope = scope.where(sql_query, query: "%#{params[:query]}%")
+    else
+      scope = scope.all
+    end
+    scope
   end
 
 end
