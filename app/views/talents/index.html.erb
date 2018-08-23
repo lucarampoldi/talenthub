@@ -12,11 +12,10 @@
 <div class="container">
 
   <div class="row clearfix">
-
-        <% @talents.each do |talent| %>
-          <%=  render "shared/card", talent: talent %>
-        <% end %>
-    </div>
+    <% @talents.each do |talent| %>
+      <%=  render "shared/card", talent: talent %>
+    <% end %>
+  </div>
 
 </div>
 

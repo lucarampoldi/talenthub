@@ -5,15 +5,20 @@
   <% end %>
 
 
-          <form action="/talents" class="search-form">
-            <div class="form-group has-feedback">
-              <label for="search" class="sr-only">Search</label>
-              <input type="text" class="form-control" name="search" id="search" placeholder="search talent">
+  <%= form_tag talents_path, method: :get, class: "search-form" do %>
+    <div class="position_navbar">
+      <div class="form-group has-feedback">
+        <%= text_field_tag :query,
+                           params[:query],
+                           class: "form-control",
+                           id: "search",
+                           placeholder: "Find a talent"
+        %>
+        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+      </div>
+    </div>
+  <% end %>
 
-              <span class="glyphicon glyphicon-search form-control-feedback"></span>
-
-            </div>
-          </form>
 
 
   <!-- Right Navigation -->
