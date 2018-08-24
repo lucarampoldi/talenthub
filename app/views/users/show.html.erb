@@ -31,6 +31,10 @@
         </div>
         </div>
 
+    <%= link_to "Edit your skills", edit_user_path(current_user) %>
+      <h3>bio</h3>
+    <%= link_to "Edit your bio", edit_user_path(current_user) %>
+
 
         <div class="round-title">
 
@@ -61,7 +65,9 @@
 
 
 
+
+
 <%= link_to "Edit your bio", edit_user_path(current_user) %>
 
-<%= current_user.bio %>
+
 
