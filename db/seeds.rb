@@ -231,8 +231,8 @@ review_talent_10 = [
 u1 = User.first
 u1.owned_talents.build(owned_talents_1)
 u1.save!
-u1.booked_talents << Talent.first
-u1.save!
+Booking.create!(user: User.first, talent: Talent.first, date: 2.days.from_now, content: "I need that talent")
+
 
 talent1 = u1.owned_talents.first
 talent1.reviews.build(review_talent_1)
@@ -245,8 +245,7 @@ talent2.save!
 u2 = User.second
 u2.owned_talents.build(owned_talents_2)
 u2.save!
-u2.booked_talents << Talent.second
-u2.save!
+Booking.create!(user: User.second, talent: Talent.second, date: 3.days.from_now, content: "I need that talent")
 
 talent3 = u2.owned_talents.first
 talent3.reviews.build(review_talent_3)
@@ -259,8 +258,8 @@ talent4.save!
 u3 = User.third
 u3.owned_talents.build(owned_talents_3)
 u3.save!
-u3.booked_talents << Talent.third
-u3.save!
+Booking.create!(user: User.third, talent: Talent.third, date: 4.days.from_now, content: "I need that talent")
+
 
 talent5 = u3.owned_talents.first
 talent5.reviews.build(review_talent_5)
@@ -273,8 +272,8 @@ talent6.save!
 u4 = User.fourth
 u4.owned_talents.build(owned_talents_4)
 u4.save!
-u4.booked_talents << Talent.fourth
-u4.save!
+Booking.create!(user: User.fourth, talent: Talent.fourth, date: 5.days.from_now, content: "I need that talent")
+
 
 talent7 = u4.owned_talents.first
 talent7.reviews.build(review_talent_7)

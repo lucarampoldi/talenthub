@@ -10,10 +10,13 @@
 }
 .card-user {
   position: absolute;
+  object-fit: cover;
   right: 10px;
   top: 10px;
+  height: 40px;
   width: 40px;
-  border-radius: 50%;
+  border-radius: 50px;
+  border: white 1px solid;
 }
 .card-category {
   position: absolute;
