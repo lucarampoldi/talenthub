@@ -17,7 +17,7 @@ class TalentsController < ApplicationController
     @talent = Talent.new(talent_params)
     @talent.user = current_user
     if @talent.save
-      redirect_to talent_path(@talent)
+      redirect_to talents_path
     else
       render :new
     end
