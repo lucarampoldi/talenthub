@@ -4,11 +4,4 @@ class DashboardController < ApplicationController
     @bookings = current_user.bookings
     @booked_talents = current_user.booked_talents
   end
-
-
-  def show
-  @user = current_user
-  @talents = @user.owned_talents
-  @bookings = current_user.booked_talents
-  end
 end

@@ -1,1 +1,56 @@
-<h1>Hello World</h1>
+<div class="pfl-wrapper">
+
+  <article>
+    <div class="profile-photo"></div>
+    <div class="profile-info">
+      <%= cl_image_tag current_user.picture %>
+      <p>user.description <a href="http://fiascodesign.co.uk/" target="_blank">@NameofLink</a>. Short Description. Include cool links to the profile <a href="http://mountainandco.uk/" target="_blank">@NameofLink</a>.</p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 people">
+          <h4><%= current_user.name %>s open Talents</h4>
+        </div>
+      </div>
+    </div>
+
+         <div class="row">
+           <% @talent.limit(3).each do |talent| %>
+            <div class="col-sm-4">
+            <%=  render "shared/user_profile", talent: talent %>
+            </div>
+            <% end %>
+        </div>
+
+         <div class="row">
+          <div class="col-sm-6">
+
+
+        </div>
+        </div>
+
+
+        <div class="round-title">
+
+        <a href="https://codepen.io/nickylew/" class="col-xs-4 round-tile">
+          <div class="roundal codepen"></div>
+          <h4>CodePen</h4>
+        </a>
+
+        <a href="https://www.instagram.com/nickylewlew/" class="col-xs-4 round-tile">
+          <div class="roundal instagram"></div>
+          <h4>Instagram</h4>
+        </a>
+
+        <a href="https://twitter.com/nickylewlew/" class="col-xs-4 round-tile">
+          <div class="roundal twitter"></div>
+          <h4>Twitter</h4>
+        </a>
+      </div>
+      </div>
+    </div>
+
+  </article>
+
+</div>
