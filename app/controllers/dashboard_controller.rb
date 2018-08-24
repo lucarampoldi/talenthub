@@ -4,5 +4,4 @@ class DashboardController < ApplicationController
     @bookings = current_user.bookings
     @booked_talents = current_user.booked_talents
   end
-
 end
