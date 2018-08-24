@@ -52,13 +52,16 @@ article {
       margin-top: 0.5em
 }
   .people {
-    .round-tile {
+    text-align: center;
+  }
+
+  .round-tile {
       display: inline-block;
       float: left;
       margin-bottom: 30px;
       text-align: center;
       text-decoration: none;
-    }
+
       &:hover {
         text-decoration: none;
       }
@@ -124,7 +127,7 @@ article {
         transition: color 0.25s;
         text-decoration: none
       }
-  }
+    }
 
    .profile-talent-card {
     width: 25rem;
@@ -156,8 +159,9 @@ article {
     width: 200px;
   }
 
-.book_again_button{
+.book_again{
   margin-left: 60px;
+  text-align: center;
 }
 
 
