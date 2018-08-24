@@ -3,21 +3,19 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.jpg", height: 50  %>
   <% end %>
-
-
-  <%= form_tag talents_path, method: :get, class: "search-form" do %>
-    <div class="position_navbar">
-      <div class="form-group has-feedback">
-        <%= text_field_tag :query,
-                           params[:query],
-                           class: "form-control",
-                           id: "search",
-                           placeholder: "Find a talent"
-        %>
-        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+  <div class="row">
+    <div class="col-md-6 ">
+      <div class="wider_search_bar">
+        <%= form_tag talents_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+            placeholder: "Find a talent"
+            %>
+        <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
 
 
 
