@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   get "/dashboard", to: "dashboard#index"
+  resources :users, only: [:show]
 
 end
 
