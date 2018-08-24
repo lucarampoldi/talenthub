@@ -1,0 +1,30 @@
+
+
+<div class="col-xs-12 col-sm-4">
+  <div class="booking_card" style="">
+
+    <%= cl_image_tag booking&.talent&.picture, class: "card-img-top" %>
+
+    <div class="card-body">
+      <div class="bookinng_card_title">
+        <h5><%= booking&.talent&.title %></h5>
+      </div>
+      <div class="booking_card_text">
+        <p> <%= booking.content %></p>
+      </div>
+      <hr/>
+      <div class="booking_container">
+        <p>
+          <%= l(booking.date, format: :day_month) if booking.date %>
+        <p>
+        <p>
+          <%= booking&.talent&.price %>€
+        <p>
+      </div>
+    </div>
+
+    <div class="book_again_button">
+       <%= link_to "book again", talent_path(booking.talent), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

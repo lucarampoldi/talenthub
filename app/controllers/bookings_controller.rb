@@ -9,9 +9,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @booking = Booking.new(booking_params)
-    @talent = find_talent
+    @talent = Talent.find(params[:talent_id])
     @booking.talent = @talent
     @booking.user = current_user
     if @booking.save
@@ -36,16 +35,11 @@ class BookingsController < ApplicationController
 
   private
 
-  def find_talent
-    @talent = Talent.find(params[:talent_id])
-  end
-
   def find_booking
     @booking = Booking.find(params[:talent_id])
   end
 
   def booking_params
-
     params.require(:booking).permit(:date, :content, :talent)
   end
 end

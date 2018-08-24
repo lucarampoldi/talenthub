@@ -1,16 +1,19 @@
 <div class="col-xs-12 col-sm-6 col-md-3">
   <div class="card-wrap">
-      <div class="card" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path talent.picture %>');">
+      <div class="card" style= "background-image:  url('<%= image_path talent.picture %>');">
 
         <div class="card-title">
           <h2><%= talent.title %></h2>
         </div>
+
+       <%= image_tag talent.user.avatar, class: "card-user" %>
 
 
          <%= link_to "", talent_path(talent), class: 'card-link' %>
       </div>
       <div class="card-description">
          <strong>description: </strong>
+         <p>  <%= talent.description %></p>
          <p> <strong>price: </strong> <%=talent.price%> € </p>
        </div>
   </div>

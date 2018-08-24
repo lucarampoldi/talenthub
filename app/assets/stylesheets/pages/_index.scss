@@ -1,13 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
-
+@import "dashboard";
 
 //page-content
 
 .banner_index{
   color: white;
   text-align: center;
-  height: 70vh;
+  height: 50vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-position: center;
