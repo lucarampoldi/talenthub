@@ -17,7 +17,7 @@
     </div>
 
          <div class="row">
-           <% @talent.limit(3).each do |talent| %>
+           <% @user.owned_talents.limit(3).each do |talent| %>
             <div class="col-sm-4">
             <%=  render "shared/user_profile", talent: talent %>
             </div>
@@ -26,14 +26,17 @@
 
          <div class="row">
           <div class="col-sm-6">
+             <h3>bio</h3>
         <%= link_to "Edit your bio", edit_user_path(current_user) %>
 
         </div>
         </div>
 
+
     <%= link_to "Edit your skills", edit_user_path(current_user) %>
       <h3>bio</h3>
     <%= link_to "Edit your bio", edit_user_path(current_user) %>
+
 
 
         <div class="round-title">
@@ -59,7 +62,6 @@
   </article>
 
 </div>
-
 
 
 
