@@ -1,21 +1,29 @@
 class TalentsController < ApplicationController
-  before_action :find_talent, only: [:show, :edit, :update, :destroy]
+  before_action :find_talent, only: %i[show edit update destroy]
+
+  def index
+    @talents = search_for_talent(Talent.all)
+  end
 
   def show
     @booking = Booking.new
   end
 
-  def edit
+  def new
+    @talent = Talent.new
   end
 
   def create
     @talent = Talent.new(talent_params)
     @talent.user = current_user
     if @talent.save
-      redirect_to talent_path(@talent)
+      redirect_to talents_path
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def update
@@ -28,14 +36,6 @@ class TalentsController < ApplicationController
     redirect_to talents_path
   end
 
-  def new
-    @talent = Talent.new
-  end
-
-  def index
-    @talents = case_insensitive_search(Talent.all)
-  end
-
   private
 
   def find_talent
@@ -46,24 +46,8 @@ class TalentsController < ApplicationController
     params.require(:talent).permit(:title, :description, :picture)
   end
 
-  def poor_mans_search(scope)
-    if params[:query].present?
-      query = params[:query]
-      scope = scope.where(title: query)
-    else
-      scope = scope
-    end
+  def search_for_talent(scope)
+    scope = scope.full_text_search(params[:query]) if params[:query].present?
     scope
   end
-
-  def case_insensitive_search(scope)
-    if params[:query].present?
-      sql_query = "title ILIKE :query OR description ILIKE :query"
-      scope = scope.where(sql_query, query: "%#{params[:query]}%")
-    else
-      scope = scope.all
-    end
-    scope
-  end
-
 end

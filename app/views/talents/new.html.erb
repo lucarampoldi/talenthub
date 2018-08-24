@@ -6,7 +6,9 @@
         <%= simple_form_for @talent do |f| %>
           <%= f.input :title, required: true  %>
           <%= f.input :description, required: true  %>
+          <%= f.input :price, required: true  %>
           <%= f.input :picture %>
+          <%= f.input :picture_cache, as: :hidden %>
           <%= f.submit "add a talent!", class: "btn btn-primary" %>
         <% end %>
     </div>

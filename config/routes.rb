@@ -6,9 +6,11 @@ Rails.application.routes.draw do
 
   resources :talents do
     resources :bookings, except: :destroy
+    resources :reviews, only: [:new, :create, :destroy]
   end
 
   get "/dashboard", to: "dashboard#index"
+
 end
 
 

@@ -1,7 +1,15 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
+
+
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'pg_search'
+
 gem 'rubocop', '~> 0.58.2'
+
 gem 'devise'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
@@ -17,6 +25,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+gem 'pg_search'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
