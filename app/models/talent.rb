@@ -10,7 +10,6 @@ class Talent < ApplicationRecord
 
   mount_uploader :picture, PhotoUploader
 
-
   pg_search_scope :full_text_search,
     against: [:title, :description],
     using: {
