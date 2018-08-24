@@ -22,7 +22,7 @@
         <%= simple_form_for [@talent, @booking] do |f| %>
 
           <%= f.input :date, as: :string, placeholder: "Pick a date", input_html: { class: 'datepicker' } %>
-          <%= f.input :content, required: true  %>
+          <%= f.input :content, required: true  %>x
           <%= f.submit "Book me now", class: "btn btn-primary" %>
           <% end %>
     </div>
